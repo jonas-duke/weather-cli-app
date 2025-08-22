@@ -1,6 +1,6 @@
 # Weather CLI App 🌤️
 
-A simple command-line weather application that fetches real-time weather data using the OpenWeatherMap API.
+A simple weather application that fetches real-time weather data using the OpenWeatherMap API. Available as both a command-line interface and a web app using Streamlit.
 
 ## Features
 
@@ -8,6 +8,8 @@ A simple command-line weather application that fetches real-time weather data us
 - 💧 Humidity percentage
 - ☁️ Weather description
 - 🏙️ City and country information
+- 💻 Command-line interface
+- 🌐 Web interface with Streamlit
 
 ## Setup Instructions
 
@@ -39,14 +41,21 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Interactive Mode
+### Option 1: Command Line Interface
 ```bash
 python weather_app.py
 ```
 The app will prompt you to enter a city name.
 
-## Example Output
+### Option 2: Web Interface (Streamlit)
+```bash
+streamlit run streamlit_app.py
+```
+This will open a web browser with an interactive interface where you can enter city names and see the weather data displayed with metrics and formatting.
 
+## Example Outputs
+
+### CLI Output
 ```
 🌤️  Welcome to Weather CLI App!
 🔍 Fetching weather data for Miami...
@@ -65,6 +74,7 @@ The app will prompt you to enter a city name.
 - Python 3.6+
 - `requests` library
 - `python-dotenv` library
+- `streamlit` library
 - OpenWeatherMap API key
 
 ## License
