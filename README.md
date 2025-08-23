@@ -1,81 +1,82 @@
 # Weather CLI App 🌤️
 
-A simple weather application that fetches real-time weather data using the OpenWeatherMap API. Available as both a command-line interface and a web app using Streamlit.
+A simple command-line weather application that fetches real-time weather data using the OpenWeatherMap API.
+
+## Architecture
+
+```mermaid
+graph TD
+    A[User Input] --> B[weather_app.py]
+    B --> C[Load Environment Variables]
+    C --> D[OpenWeatherMap API Call]
+    D --> E[Parse JSON Response]
+    E --> F[Format & Display Results]
+    F --> G[Terminal Output]
+    
+    style A fill:#e1f5fe
+    style G fill:#c8e6c9
+    style D fill:#fff3e0
+```
 
 ## Features
 
-- 🌡️ Current temperature in Celsius
-- 💧 Humidity percentage
+- 🌡️ Current temperature in Fahrenheit
+- 💧 Humidity percentage  
 - ☁️ Weather description
 - 🏙️ City and country information
-- 💻 Command-line interface
-- 🌐 Web interface with Streamlit
+- 💻 Pure command-line interface
+- 🚀 Fast and lightweight
+
+## How to Run the CLI App
+
+```bash
+python weather_app.py
+```
+
+The app will prompt you to enter a city name and display the weather information.
 
 ## Setup Instructions
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/jonas-duke/weather-cli-app
-cd weather-cli-app
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Get an API Key
+### 2. Get an API Key
 1. Visit [OpenWeatherMap](https://openweathermap.org/)
-2. Sign up for a free account
+2. Sign up for a free account  
 3. Go to API keys section and copy your key
 
-### 4. Configure Environment
-1. Copy the example environment file:
-   ```bash
-   cp .env.example .env
-   ```
-2. Edit `.env` and add your API key:
-   ```
-   OPENWEATHER_API_KEY=your_actual_api_key_here
-   ```
-
-## Usage
-
-### Option 1: Command Line Interface
-```bash
-python weather_app.py
+### 3. Configure Environment
+Create a `.env` file in the root directory and add your API key:
 ```
-The app will prompt you to enter a city name.
-
-### Option 2: Web Interface (Streamlit)
-```bash
-streamlit run streamlit_app.py
+OPENWEATHER_API_KEY=your_actual_api_key_here
 ```
-This will open a web browser with an interactive interface where you can enter city names and see the weather data displayed with metrics and formatting.
 
-## Example Outputs
+## Python Version
 
-### CLI Output
+This application is built and tested with **Python 3.7+**
+
+## Example Output
+
 ```
 🌤️  Welcome to Weather CLI App!
+🏙️  Enter a city name: Miami
 🔍 Fetching weather data for Miami...
 
 ==================================================
 🌤️  WEATHER REPORT FOR MIAMI, US
 ==================================================
-🌡️  Temperature: 28.5°C
+🌡️  Temperature: 83.3°F
 💧 Humidity: 78%
 ☁️  Description: Partly Cloudy
 ==================================================
 ```
 
-## Requirements
+## Dependencies
 
-- Python 3.6+
-- `requests` library
-- `python-dotenv` library
-- `streamlit` library
-- OpenWeatherMap API key
+- `requests==2.31.0` - HTTP requests for API calls
+- `python-dotenv==1.0.0` - Environment variable management
 
 ## License
 
