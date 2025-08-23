@@ -15,7 +15,8 @@ def get_weather(city):
     base_url = "http://api.openweathermap.org/data/2.5/weather"
     params = {
         'q': city,
-        'appid': api_key
+        'appid': api_key,
+        'units': 'imperial'
     }
     
     response = requests.get(base_url, params=params)
@@ -35,7 +36,7 @@ def display_weather(weather_data):
     print("\n" + "="*50)
     print(f"🌤️  WEATHER REPORT FOR {city_name.upper()}, {country}")
     print("="*50)
-    print(f"🌡️  Temperature: {temp_celsius}°C")
+    print(f"🌡️  Temperature: {temp_celsius}°F")
     print(f"💧 Humidity: {humidity}%")
     print(f"☁️  Description: {description}")
     print("="*50)
